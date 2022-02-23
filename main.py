@@ -11,7 +11,7 @@ hp = 11
 attack = 12
 
 
-def random_monster() -> tuple[int, int]:
+def random_monster() -> list:
     """У чудовища есть случайное число здоровья и атаки."""
     life_points = random.randint(1, 10)
     impact_force = random.randint(1, 18)
