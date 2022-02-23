@@ -1,7 +1,6 @@
 """Текстовая игра «герой и чудовища»."""
 
 import random
-import sys
 
 """счетчик поверженных героем чудовищ"""
 monster_counter = 0
@@ -25,7 +24,7 @@ def actions_with_monster(monster_hp: int, monster_attack: int) -> None:
 
     while True:
         try:
-            a = int(input("Выберите действие: 1-атаковать чудовище, 2-убежать "))
+            a = int(input("Выберите действие: 1-атаковать чудовище, 2-убежать  \n"))
             if a == 1:
                 print("В БОЙ!!! \n")
                 while hp > 0 and monster_hp > 0:
@@ -37,7 +36,7 @@ def actions_with_monster(monster_hp: int, monster_attack: int) -> None:
                     print("Вы победили монстра! \n")
                 else:
                     print("Вы пали в честной битве! ПОРАЖЕНИЕ")
-                    sys.exit()
+                    exit()
             elif a == 2:
                 print("Бежим отсюда!!! \n")
                 break
@@ -112,10 +111,10 @@ def game() -> None:
             break
     if monster_counter == 10 and hp > 0:
         print("ПОБЕДА")
-        sys.exit()
+        exit()
     elif hp <= 0 and monster_counter <= 10:
         print("ПОРАЖЕНИЕ")
-        sys.exit()
+        exit()
 
 
 game()
